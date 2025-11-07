@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Typing Speed Tester</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title">Typing Speed Tester</h1>
+
+      <section class="card">
+        <div id="sentence" class="sentence" aria-live="polite"></div>
+
+        <div class="controls">
+          <button id="startBtn" class="btn primary">Start</button>
+          <button id="finishBtn" class="btn" disabled>Finish</button>
+          <button id="resetBtn" class="btn ghost" disabled>Reset</button>
+          <button id="newBtn" class="btn">New sentence</button>
+        </div>
+
+        <textarea id="input" class="input" placeholder="Start typing here..." rows="3" disabled></textarea>
+
+        <div class="stats">
+          <div class="stat">
+            <div id="wpm" class="value">0.00</div>
+            <div class="label">WPM</div>
+          </div>
+          <div class="stat">
+            <div id="acc" class="value">0.00%</div>
+            <div class="label">Accuracy</div>
+          </div>
+          <div class="stat">
+            <div id="time" class="value">0.00s</div>
+            <div class="label">Time</div>
+          </div>
+        </div>
+
+        <div class="progress">
+          <div id="progressBar" class="progress-bar" style="width: 0%"></div>
+        </div>
+
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+      </section>
+
+      <p class="tip">Tip: Prioritize accuracy. As you get comfortable, your speed will naturally improve.</p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

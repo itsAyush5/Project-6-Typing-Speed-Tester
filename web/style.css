@@ -1,0 +1,167 @@
+/* Typing Speed Tester - Web UI Styles */
+:root {
+  --bg: #0f172a;          /* slate-900 */
+  --card: #111827;        /* gray-900 */
+  --muted: #94a3b8;       /* slate-400 */
+  --text: #e5e7eb;        /* gray-200 */
+  --primary: #22d3ee;     /* cyan-400 */
+  --accent: #a78bfa;      /* violet-400 */
+  --success: #34d399;     /* green-400 */
+  --warn: #fbbf24;        /* amber-400 */
+  --danger: #f87171;      /* red-400 */
+  --progress: #38bdf8;    /* sky-400 */
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1000px 600px at 10% 10%, #1e293b 0%, transparent 60%),
+              radial-gradient(900px 500px at 90% 20%, #111827 0%, transparent 60%),
+              radial-gradient(800px 600px at 50% 100%, #0b1220 0%, var(--bg) 60%);
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 10px 0 24px 0;
+  font-size: 2.1rem;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  padding: 22px 22px 16px 22px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.sentence {
+  min-height: 80px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #e2e8f0; /* slate-200 */
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px dashed rgba(148, 163, 184, 0.25);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0 10px 0;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+.btn:hover { transform: translateY(-1px); background: rgba(255,255,255,0.09); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-color: transparent;
+  color: #0b1020;
+  font-weight: 700;
+}
+
+.btn.ghost { background: rgba(255,255,255,0.04); }
+
+.input {
+  width: 100%;
+  resize: vertical;
+  min-height: 76px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(2, 6, 23, 0.45);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px 14px;
+  outline: none;
+  font-size: 1.05rem;
+}
+.input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15); }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.stat {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+.value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+.label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.value.good { color: var(--success); }
+.value.ok { color: var(--warn); }
+.value.bad { color: var(--danger); }
+
+.progress {
+  margin-top: 10px;
+  height: 10px;
+  background: rgba(148, 163, 184, 0.18);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--progress), var(--primary));
+  transition: width 120ms ease;
+}
+
+.feedback {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* Per-character highlighting */
+.char { opacity: 0.6; }
+.char.correct { color: var(--success); opacity: 1; }
+.char.incorrect { color: var(--danger); opacity: 1; text-decoration: underline wavy rgba(248,113,113,0.4); }
+.char.current { color: var(--primary); opacity: 1; text-decoration: underline dotted rgba(34,211,238,0.5); }
+
+.tip {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+}
